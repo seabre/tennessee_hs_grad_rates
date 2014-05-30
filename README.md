@@ -2,6 +2,20 @@
 
 It's a [cloropleth](http://en.wikipedia.org/wiki/Choropleth_map)!
 
+### Requirements
+
+Node and npm.
+
+Once those are installed, run `npm install` in the root of this project.
+
+### Building
+
+To build a distributable copy, just run `grunt`.
+
+### Local development
+
+To run a local server for development, run `grunt serve`.
+
 ### Data sources
 
 Geometries: [2013 TIGER/Line Shapefiles of school districts in Tennessee. Secondary and unified districts.](http://www.census.gov/cgi-bin/geo/shapefiles2013/main)
