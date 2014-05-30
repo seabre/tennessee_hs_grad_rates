@@ -424,7 +424,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'connect:test',
-      'mocha'
+      // Stop mocha, for now.
+      //'mocha'
     ]);
   });
 
