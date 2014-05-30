@@ -4,9 +4,11 @@ It's a [cloropleth](http://en.wikipedia.org/wiki/Choropleth_map)!
 
 ### Requirements
 
-Node and npm.
+Node, npm, and bower.
 
 Once those are installed, run `npm install` in the root of this project.
+
+Then run `bower install`.
 
 ### Building
 
