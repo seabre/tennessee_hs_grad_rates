@@ -1,0 +1,109 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+// colors
+@import 'vendor/colorbrewer';
+@import 'modules/colors';
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#chart {
+  svg {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.district {
+  stroke: black;
+  stroke-width: 0.5;
+}
+
+.cc-null {
+  fill:$color-class-null;
+}
+
+.cc1 {
+  fill:$color-class-one;
+}
+
+.cc2 {
+  fill:$color-class-two;
+}
+
+.cc3 {
+  fill:$color-class-three;
+}
+
+.cc4 {
+  fill:$color-class-four;
+}
+
+.cc5 {
+  fill:$color-class-five;
+}
+
+.cc6 {
+  fill:$color-class-six;
+}
+
+.cc7 {
+  fill:$color-class-seven;
+}
+
+.cc-null-legend {
+  background-color: $color-class-null;
+  width: 50%;
+}
+
+.cc1-legend {
+  background-color: $color-class-one;
+  width: 50%;
+}
+
+.cc2-legend {
+  background-color: $color-class-two;
+  width: 50%;
+}
+
+.cc3-legend {
+  background-color: $color-class-three;
+  width: 50%;
+}
+
+.cc4-legend {
+  background-color: $color-class-four;
+  width: 50%;
+}
+
+.cc5-legend {
+  background-color: $color-class-five;
+  width: 50%;
+}
+
+.cc6-legend {
+  background-color: $color-class-six;
+  width: 50%;
+}
+
+.cc7-legend {
+  background-color: $color-class-seven;
+  width: 50%;
+}
+
+

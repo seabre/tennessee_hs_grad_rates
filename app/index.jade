@@ -1,0 +1,83 @@
+doctype html
+html.no-js
+  head
+    meta(charset="utf-8")
+    title Tennessee Graduation Rates
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width")
+    link(rel="shortcut icon", href="/favicon.ico")
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    // build:css styles/vendor.css
+    // bower:css
+    // endbower
+    // endbuild
+    // build:css(.tmp) styles/main.css
+    link(rel="stylesheet", href="styles/main.css")
+    // endbuild
+    // build:js scripts/vendor/modernizr.js
+    script(src="../bower_components/modernizr/modernizr.js")
+    // endbuild
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src="../bower_components/jquery/dist/jquery.js")
+    script(src="../bower_components/d3/d3.js")
+    script(src="../bower_components/topojson/topojson.js")
+    // endbower
+    // endbuild
+  body
+    <!--[if lt IE 10]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+    .container
+      .row
+        .col-md-12
+          h2 Graduation Rates For The State Of Tennessee
+      .row
+        .col-md-8
+          #chart
+        .col-md-4
+          table
+            tbody
+              tr
+                td.cc-null-legend
+                td No Data
+              tr
+                td.cc1-legend
+                td 20%&#8211;31%
+              tr
+                td.cc2-legend
+                td 31%&#8211;43%
+              tr
+                td.cc3-legend
+                td 43%&#8211;54%
+              tr
+                td.cc4-legend
+                td 54%&#8211;66%
+              tr
+                td.cc5-legend
+                td 66%&#8211;77%
+              tr
+                td.cc6-legend
+                td 77%&#8211;89%
+              tr
+                td.cc7-legend
+                td 89%&#8211;100%
+      .row
+        .col-md-4
+          select#graduation_type.form-control
+            option(value="0") All Graduation Rate
+            option(value="1") White Graduation Rate
+            option(value="2") African American Graduation Rate
+            option(value="3") Hispanic Graduation Rate
+            option(value="4") Asian graduation Rate
+            option(value="5") Native American Graduation Rate
+            option(value="6") Male Graduation Rate
+            option(value="7") Female Graduation Rate
+            option(value="8") Economically Disadvantaged Graduation Rate
+            option(value="9") Students With Disabilities Graduation Rate
+            option(value="10") Limited English Proficient Graduation Rate
+        .col-md-4
+          span#school_district
+        .col-md-4
+          span#rate
+    // build:js({app,.tmp}) scripts/app.js
+    script(src="scripts/app.js")
+    // endbuild

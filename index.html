@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Tennessee Graduation Rates</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/d3/d3.js"></script>
+        <script src="../bower_components/topojson/topojson.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+           <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <h2>Graduation Rates For The State Of Tennessee</h2>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-12">
+               <div id="chart">
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-4">
+	       <select class="form-control" id="graduation_type">
+	         <option value="0">All Graduation Rate</option>
+		 <option value="1">White Graduation Rate</option>
+		 <option value="2">African American Graduation Rate</option>
+		 <option value="3">Hispanic Graduation Rate</option>
+		 <option value="4">Asian graduation Rate</option>
+		 <option value="5">Native American Graduation Rate</option>
+		 <option value="6">Male Graduation Rate</option>
+		 <option value="7">Female Graduation Rate</option>
+		 <option value="8">Economically Disadvantaged Graduation Rate</option>
+		 <option value="9">Students With Disabilities Graduation Rate</option>
+		 <option value="10">Limited English Proficient Graduation Rate</option>
+	       </select>
+             </div>
+             <div class="col-md-4">
+               <span id="school_district"></span>
+             </div>
+             <div class="col-md-4">
+               <span id="rate"></span>
+             </div>
+           </div>
+           </div>
+
+
+
+        <!-- build:js({app,.tmp}) scripts/app.js -->
+        <script src="scripts/app.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

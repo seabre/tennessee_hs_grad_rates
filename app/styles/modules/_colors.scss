@@ -1,0 +1,10 @@
+$bkg: cbrew('gnbu', 7);
+
+$color-class-null: rgb(128,128,128);
+$color-class-one: nth($bkg, 1); 
+$color-class-two: nth($bkg, 2);
+$color-class-three: nth($bkg, 3);
+$color-class-four: nth($bkg, 4);
+$color-class-five: nth($bkg, 5);
+$color-class-six: nth($bkg, 6);
+$color-class-seven: nth($bkg, 7);
