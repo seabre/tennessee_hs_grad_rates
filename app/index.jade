@@ -6,6 +6,7 @@ html.no-js
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
     link(rel="shortcut icon", href="/favicon.ico")
+    link(href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700", rel="stylesheet", type="text/css")
     // Place favicon.ico and apple-touch-icon.png in the root directory
     // build:css styles/vendor.css
     // bower:css
@@ -28,13 +29,34 @@ html.no-js
     <!--[if lt IE 10]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
     .container
       .row
-        .col-md-12
+        .col-md-12#heading
           h2 Graduation Rates For The State Of Tennessee
+      .row
+        .col-md-12
+          p The following is a choropleth. It shows the Tennessee public high school graduation rates. The data shown is from the 2011-2012 school year.
+      .row
+        .col-md-4
+          select#graduation_type.form-control
+            option(value="0") All Graduation Rate
+            option(value="1") White Graduation Rate
+            option(value="2") African American Graduation Rate
+            option(value="3") Hispanic Graduation Rate
+            option(value="4") Asian Graduation Rate
+            option(value="5") Native American Graduation Rate
+            option(value="6") Male Graduation Rate
+            option(value="7") Female Graduation Rate
+            option(value="8") Economically Disadvantaged Graduation Rate
+            option(value="9") Students With Disabilities Graduation Rate
+            option(value="10") Limited English Proficient Graduation Rate
+        .col-md-4
+          span#school_district
+        .col-md-4
+          span#rate
       .row
         .col-md-8
           #chart
         .col-md-4
-          table
+          table.table
             tbody
               tr
                 td.cc-null-legend
@@ -60,24 +82,6 @@ html.no-js
               tr
                 td.cc7-legend
                 td 89%&#8211;100%
-      .row
-        .col-md-4
-          select#graduation_type.form-control
-            option(value="0") All Graduation Rate
-            option(value="1") White Graduation Rate
-            option(value="2") African American Graduation Rate
-            option(value="3") Hispanic Graduation Rate
-            option(value="4") Asian Graduation Rate
-            option(value="5") Native American Graduation Rate
-            option(value="6") Male Graduation Rate
-            option(value="7") Female Graduation Rate
-            option(value="8") Economically Disadvantaged Graduation Rate
-            option(value="9") Students With Disabilities Graduation Rate
-            option(value="10") Limited English Proficient Graduation Rate
-        .col-md-4
-          span#school_district
-        .col-md-4
-          span#rate
     // build:js({app,.tmp}) scripts/app.js
     script(src="scripts/app.js")
     // endbuild

@@ -1,13 +1,9 @@
 (function() {
   'use strict';
 
-  var width = 900,
-      height = 500;
-
   var projection = d3.geo.mercator()
-      .center([-86.3921, 35.8461])
-      .scale(1200 * 4.75)
-      .translate([width / 2, height / 2]);
+      .scale(5500)
+      .center([-85.9, 35.2461]);
 
   var path = d3.geo.path()
       .projection(projection);
@@ -67,8 +63,14 @@
   }
 
   function populateInfo(t) {
+    var percentage = t.properties[graduationType($('#graduation_type').val())];
+
     $('#school_district').text(t.properties.NAME);
-    $('#rate').text(t.properties[graduationType($('#graduation_type').val())] + '%');
+    if (percentage === '-'){
+      $('#rate').text('No Data');
+    } else {
+      $('#rate').text(percentage + '%');
+    }
   }
 
   function mouseover(d) {
@@ -83,11 +85,14 @@
     d3.select(this).style('filter', null);
   }
 
-  var svg = d3.select('#chart').append('svg')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('viewBox', '0 0 ' + width + ' ' + height)
-    .attr('preserveAspectRatio', 'xMinYMin meet');
+  function sizeChange() {
+    d3.select('g').attr('transform', 'scale(' + $('#chart').width()/900 + ')');
+    $('svg').height($('#chart').width()*0.618);
+  }
+
+  var svg = d3.select('#chart')
+    .append('svg')
+    .append('g');
 
   var defs = svg.append('defs');
 
@@ -114,6 +119,9 @@
   feMerge.append('feMergeNode')
       .attr('in', 'SourceGraphic');
 
+  d3.select(window)
+    .on('resize', sizeChange);
+
   d3.json('data/tennessee_school_districts.topojson', function(error, tn) {
     svg.selectAll('path')
       //jshint camelcase: false
@@ -128,5 +136,9 @@
   $('#graduation_type').change(function() {
     svg.selectAll('path')
     .attr('class', function(d) { return 'district ' + dataClass(d.properties[graduationType($('#graduation_type').val())]); });
+  });
+
+  $(window).load(function() {
+    sizeChange();
   });
 })();

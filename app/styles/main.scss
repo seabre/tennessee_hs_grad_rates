@@ -19,6 +19,9 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-image:url('../images/crossword.png');
+  background-repeat:repeat;
+  font-family: 'Droid Serif', serif;
 }
 
 #chart {
@@ -107,3 +110,16 @@ body {
 }
 
 
+#heading {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+#rate {
+  font-weight: bold;
+  font-size: large;
+}
+
+#school_district {
+  font-size: large;
+}
