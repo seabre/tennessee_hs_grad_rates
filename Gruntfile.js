@@ -1,4 +1,4 @@
-// Generated on 2014-05-21 using generator-webapp 0.4.9
+// Generated on 2014-05-30 using generator-webapp 0.4.9
 'use strict';
 
 // # Globbing
@@ -27,28 +27,8 @@ module.exports = function (grunt) {
     // Project settings
     config: config,
 
-    // Jade
-    jade: {
-      dist: {
-        options: {
-          pretty: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= config.app %>',
-          dest: '.tmp',
-          src: '*.jade',
-          ext: '.html'
-        }]
-      }
-    },
-
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      jade: {
-        files: ['<%= config.app %>/{,*/}*.jade'],
-        tasks: ['jade']
-      },
       bower: {
         files: ['bower.json'],
         tasks: ['bowerInstall']
@@ -80,7 +60,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '.tmp/{,*/}*.html',
+          '<%= config.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
@@ -243,7 +223,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
-      html: '.tmp/index.html'
+      html: '<%= config.app %>/index.html'
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
@@ -292,7 +272,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '.tmp',
+          cwd: '<%= config.dist %>',
           src: '{,*/}*.html',
           dest: '<%= config.dist %>'
         }]
@@ -338,7 +318,8 @@ module.exports = function (grunt) {
             '.htaccess',
             'images/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'data/*.*'
           ]
         }, {
           expand: true,
@@ -402,7 +383,6 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'autoprefixer',
-      'jade',
       'connect:livereload',
       'watch'
     ]);
@@ -424,14 +404,13 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'connect:test',
-      // Stop mocha, for now.
+      // Disable mocha for now.
       //'mocha'
     ]);
   });
 
   grunt.registerTask('build', [
     'clean:dist',
-    'jade',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
@@ -451,3 +430,4 @@ module.exports = function (grunt) {
     'build'
   ]);
 };
+
