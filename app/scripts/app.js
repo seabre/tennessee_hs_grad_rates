@@ -2,11 +2,11 @@
   'use strict';
 
   var projection = d3.geo.mercator()
-      .scale(5500)
-      .center([-85.9, 35.2461]);
+    .scale(5500)
+    .center([-85.9, 35.2461]);
 
   var path = d3.geo.path()
-      .projection(projection);
+    .projection(projection);
 
   function dataRanges(){
     return $.map($(new Array(8)), function(val, i) { return Math.round((i * 80/7.0) + 20); });
@@ -97,27 +97,27 @@
   var defs = svg.append('defs');
 
   var filter = defs.append('filter')
-      .attr('id', 'drop_shadow')
-      .attr('height', '300%');
+    .attr('id', 'drop_shadow')
+    .attr('height', '300%');
 
   filter.append('feGaussianBlur')
-      .attr('in', 'SourceAlpha')
-      .attr('stdDeviation', 5)
-      .attr('result', 'blur');
+    .attr('in', 'SourceAlpha')
+    .attr('stdDeviation', 5)
+    .attr('result', 'blur');
 
   filter.append('feOffset')
-      .attr('in', 'blur')
-      .attr('dx', 0)
-      .attr('dy', 0)
-      .attr('result', 'offsetBlur');
+    .attr('in', 'blur')
+    .attr('dx', 0)
+    .attr('dy', 0)
+    .attr('result', 'offsetBlur');
 
   var feMerge = filter.append('feMerge');
 
   feMerge.append('feMergeNode')
-      .attr('in', 'offsetBlur');
+    .attr('in', 'offsetBlur');
 
   feMerge.append('feMergeNode')
-      .attr('in', 'SourceGraphic');
+    .attr('in', 'SourceGraphic');
 
   d3.select(window)
     .on('resize', sizeChange);
@@ -126,7 +126,7 @@
     svg.selectAll('path')
       //jshint camelcase: false
       .data(topojson.feature(tn, tn.objects.tennessee_school_districts).features)
-    .enter().append('path')
+      .enter().append('path')
       .attr('class', function(d) { return 'district ' + dataClass(d.properties[graduationType(0)]); })
       .attr('d', path)
       .on('mouseover', mouseover)
